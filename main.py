@@ -1,23 +1,24 @@
-#Functions for code are located in bgpview_api.py
-#Example of me using multiple functions to output helpful Data
-import bgpview_api
+#!/usr/bin/env python
+"""
+Example of me using multiple functions to output helpful Data
+Functions for code are located in bgpview_api.property
+"""
 import sys
 import ipaddress
+import bgpview_api
+
 
 def ipaddress_check():
     input_ip = input('Please provide IPv4 or IPv6 Public IP address to run search against: ')
     try:
-        ip = ipaddress.ip_address(input_ip)
-        print('%s is a correct IP%s address.' % (ip, ip.version))
+        ip_check = ipaddress.ip_address(input_ip)
+        print('%s is a correct IP%s address.' % (ip_check, ip_check.version))
         print('Proceeding with gathering API Data\n')
-        return(input_ip)
+        return input_ip
     except ValueError:
         print('\nAddress is invalid: %s' % input_ip)
         print('Exiting code, please retry with a valid IPv4 or IPv6 address')
         sys.exit()
-    except:
-        print('Usage : %s  ip' % ip)
-
 
 def main():
     ip_data = ipaddress_check()
@@ -36,8 +37,8 @@ def main():
         #Loop through route/prefix and find ISP for each
         #Pending better iteration rebuild
         for i in range(count_bgp_routes):
-            cidr=ip_lookup['data']['prefixes'][i]['prefix']
-            asn=ip_lookup['data']['prefixes'][i]['asn']['asn']
+            cidr = ip_lookup['data']['prefixes'][i]['prefix']
+            asn = ip_lookup['data']['prefixes'][i]['asn']['asn']
 
             print(cidr + ' is managed by ASN#: ' + str(asn))
 
@@ -51,7 +52,7 @@ def main():
             for peer in range(isp_peers):
                 isp = asn_peers['data']['ipv4_upstreams'][peer]['name']
                 isp_asnum = asn_peers['data']['ipv4_upstreams'][peer]['asn']
-                print (isp + ' AS#: ' + str(isp_asnum))
+                print(isp + ' AS#: ' + str(isp_asnum))
     else:
         print('No BGP Route for provided IP address')
 
