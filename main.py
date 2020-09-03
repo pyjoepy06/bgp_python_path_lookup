@@ -9,6 +9,7 @@ import bgpview_api
 
 
 def ipaddress_check():
+    """Using ipaddress library to validate a IPv4/IPv6 is being provided"""
     input_ip = input('Please provide IPv4 or IPv6 Public IP address to run search against: ')
     try:
         ip_check = ipaddress.ip_address(input_ip)
@@ -21,6 +22,7 @@ def ipaddress_check():
         sys.exit()
 
 def main():
+    """Simple example script leveraging return data from API calls"""
     ip_data = ipaddress_check()
 
     ip_lookup = bgpview_api.bgp_ip_lookup(ip_data)
