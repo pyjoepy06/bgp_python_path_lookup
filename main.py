@@ -54,7 +54,7 @@ def main():
             for peer in range(isp_peers):
                 isp = asn_peers['data']['ipv4_upstreams'][peer]['name']
                 isp_asnum = asn_peers['data']['ipv4_upstreams'][peer]['asn']
-                print(isp + ' AS#: ' + str(isp_asnum))
+                print(str(isp) + ' AS#: ' + str(isp_asnum))
     else:
         print('No BGP Route for provided IP address')
 
