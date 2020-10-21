@@ -11,9 +11,23 @@ pip3 install -r requirements.txt
 ```
 
 ### How to use the script main.py
+
+The main.py file is a example script which is entering the arguments needed for the methods inside bgpview_api.py file to execute
+
 ```
 python3 main.py
+Please provide IPv4 or IPv6 Public IP address to run search against: 2620:0:ccb::4
 ```
+
+High Level Diagram with Example:
+
+![bgp_path_lookup](./docs/BGP_Path_Lookup_High_Level.png?raw=true "BGP Path Lookup High Level")
+
+### How can this help with day-to-day tasks
+
+Run this script if you just added a new BGP peer to another ISP
+Run this script if you are experience route lose through a ISP
+View the entire API output examples in bgpview_api.py and create your own output
 
 ## Future Code Changes/Features to add
 Running a docker container that will run this code and provide a history of BGP route changes for a specific date and ASN or Public IP address
