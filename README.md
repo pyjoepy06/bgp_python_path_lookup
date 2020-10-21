@@ -25,14 +25,9 @@ High Level Diagram with Example:
 
 ### How can this help with day-to-day tasks
 
-Run this script if you just added a new BGP peer to another ISP
-Run this script if you are experience route lose through a ISP
-View the entire API output examples in bgpview_api.py and create your own output
-
-## Future Code Changes/Features to add
-Running a docker container that will run this code and provide a history of BGP route changes for a specific date and ASN or Public IP address
-Docker Container I will test against will be bgpstreams: https://bgpstream.caida.org/docs/tutorials/docker
-
+- Run this script if you just added a new BGP peer to another ISP
+- Run this script if you are experience route lose through a ISP
+- View the entire API output examples in bgpview_api.py and create your own output
 
 ## API Source:
 https://bgpview.docs.apiary.io/
