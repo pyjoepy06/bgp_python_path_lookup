@@ -4,26 +4,16 @@ Recently ran into a scenario where AWS Cloud loss Internet Connectivity within t
 
 Going to create a few functions that can take a Public IP (From client or a Cloud) and identify the summary routes, the AS-PATH(s) available, and anything else I can use that can help a network engineer find this type of information fast without using a router/firewall show ip bgp commands
 
-Clone the repo using commmand
-```
-git clone https://github.com/pyjoepy06/bgp_python_path_lookup.git
-```
-
 To run the script, you will need to have Python 3.6+ installed.  
 Dependencies are listed in **requirements.txt**. You can install them using:  
 ```
 pip3 install -r requirements.txt
 ```
 
-<<<<<<< HEAD
-### How to use the example script through main.py
-The main.py file is a example script which is entering the arguments needed for the methods inside bgpview_api.py file to execute
-=======
 ### How to use the script main.py
 
 The main.py file is a example script which is entering the arguments needed for the methods inside bgpview_api.py file to execute
 
->>>>>>> documentation_update
 ```
 python3 main.py
 Please provide IPv4 or IPv6 Public IP address to run search against: 2620:0:ccb::4
